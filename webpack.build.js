@@ -36,6 +36,14 @@ module.exports = {
                 loader: 'url-loader',
             },
         ],
+        loaders: [{
+          test: /\.js$/,
+          exclude: /node_modules/,
+          loader: 'babel',
+          query: {
+            presets: ['es2015'],
+          }
+        }]
     },
     plugins: [
         new ExtractTextPlugin('leaflet.pm.css'),
